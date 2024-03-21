@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de conversión de dólares a pesos</title>
+</head>
+<body>
+    <h2>Calculadora de conversión de dólares a pesos</h2>
+    <form id="converter">
+        <label for="dollars">Cantidad en dólares:</label>
+        <input type="number" id="dollars" step="0.01" min="0" required>
+        <button type="submit">Convertir</button>
+    </form>
+    <div id="result"></div>
+
+    <script>
+        document.getElementById("converter").addEventListener("submit", function(event) {
+            event.preventDefault();
+            var dollars = parseFloat(document.getElementById("dollars").value);
+            var pesos = dollars * 20.0; // Tipo de cambio ficticio para el ejemplo (1 USD = 20 MXN)
+            document.getElementById("result").innerText = dollars + " dólares son " + pesos + " pesos mexicanos.";
+        });
+    </script>
+</body>
+</html>
